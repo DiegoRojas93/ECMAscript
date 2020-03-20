@@ -1,24 +1,53 @@
-function newFunction(name,age,country){
-    var name=name || 'Oscar';
-    var age = age || 32;
-    var country = country || 'CO';
-    console.log(name,age,country);
+//Multilinea
+
+let fraseCompleta = `Esta es la primera frase
+Ahora esta es la segunda frase
+`
+
+console.log(fraseCompleta);
+
+let fraseCompleta2 = `Esta es la primera frase
+Ahora esta es la segunda frase
+Por ultimo esta es la tarcera Frase
+`
+console.log(fraseCompleta2);
+
+// Destructuracion
+
+let person = {
+    name :'Oscar',
+    age : 32 ,
+    country : 'MX'
 }
 
-// EC6
+console.log(person.name, person.age);
 
- function newFunction2(name='Oscar',age=32,country='CO'){
-    console.log(name,age,country);
- };
+let {name,age,country} = person;
 
- newFunction2();
- newFunction2('Ricardo', '23', 'MX');
+console.log(name,country);
 
- let hello = 'Hello'
- let world = 'Word'
+//Spread Operator
 
- let epicPhrase = hello + ' ' + world;
- console.log(epicPhrase);
- 
- let epicPhrase2 = `${hello} ${world}`;
- console.log(epicPhrase2);
+let equipo1=['Oscar', 'Julian', 'Ricardo'];
+let equipo2=['Valeria', 'Yesica', 'Camila'];
+
+let equipoNuevo = ['David', ...equipo1, ...equipo2];
+
+console.log(equipoNuevo);
+
+//Let y const
+
+{
+    var variableGlobal = 'Global var'
+}
+
+{
+    let variableLocal = 'Local let'
+    console.log(variableLocal);
+}
+
+{
+    const variableConstant = 'Const'
+    console.log(variableConstant);
+}
+
