@@ -1,53 +1,55 @@
-//Multilinea
+// Parámetros en objetos
 
-let fraseCompleta = `Esta es la primera frase
-Ahora esta es la segunda frase
-`
+let name = 'Oscar';
+let age = 32;
 
-console.log(fraseCompleta);
+    //EC5
+    let obj1 = { name: name, age: age };
 
-let fraseCompleta2 = `Esta es la primera frase
-Ahora esta es la segunda frase
-Por ultimo esta es la tarcera Frase
-`
-console.log(fraseCompleta2);
+    //EC6
+    let obj2 = { name, age };
 
-// Destructuracion
+console.log(obj2);
 
-let person = {
-    name :'Oscar',
-    age : 32 ,
-    country : 'MX'
+
+//Arrow Functions
+const names = [
+    {name: 'Diego', age: 26}
+    {name: 'Oscar', age: 32}
+]
+
+    //EC5
+    let listOfNames = names.map(function(item){
+        console.log(item.name);
+        })
+
+    //EC6
+    let listOfNames2 = names.map(item=>console.log(item.name))
+
+    let listOfNames3 = (name, age, country)=>{
+        ...
+    }
+
+    let listOfNames4 = name=>{
+        ...
+    }
+
+    const square = num => num * num;
+
+
+//Promesas
+
+const promesa = () => {
+    return new Promise((resolve, reject) => {
+        if(true){
+            resolve('Hey!')
+        }else{
+            reject('Ups!!');
+        }
+    });
 }
 
-console.log(person.name, person.age);
-
-let {name,age,country} = person;
-
-console.log(name,country);
-
-//Spread Operator
-
-let equipo1=['Oscar', 'Julian', 'Ricardo'];
-let equipo2=['Valeria', 'Yesica', 'Camila'];
-
-let equipoNuevo = ['David', ...equipo1, ...equipo2];
-
-console.log(equipoNuevo);
-
-//Let y const
-
-{
-    var variableGlobal = 'Global var'
-}
-
-{
-    let variableLocal = 'Local let'
-    console.log(variableLocal);
-}
-
-{
-    const variableConstant = 'Const'
-    console.log(variableConstant);
-}
-
+promesa()
+    .then(response => console.log(response))
+    .then(() => console.log('Hola'))
+    .catch(error => console.log(error))
