@@ -1,55 +1,40 @@
-// Parámetros en objetos
+// clases
 
-let name = 'Oscar';
-let age = 32;
-
-    //EC5
-    let obj1 = { name: name, age: age };
-
-    //EC6
-    let obj2 = { name, age };
-
-console.log(obj2);
-
-
-//Arrow Functions
-const names = [
-    {name: 'Diego', age: 26}
-    {name: 'Oscar', age: 32}
-]
-
-    //EC5
-    let listOfNames = names.map(function(item){
-        console.log(item.name);
-        })
-
-    //EC6
-    let listOfNames2 = names.map(item=>console.log(item.name))
-
-    let listOfNames3 = (name, age, country)=>{
-        ...
+class calculator{
+    constructor(){
+        this.ValueA = 0;
+        this.ValueB = 0;
     }
 
-    let listOfNames4 = name=>{
-        ...
+    sum(ValueA, ValueB){
+        this.ValueA = ValueA;
+        this.ValueB = ValueB;
+        return this.ValueA + this.ValueB;
     }
-
-    const square = num => num * num;
-
-
-//Promesas
-
-const promesa = () => {
-    return new Promise((resolve, reject) => {
-        if(true){
-            resolve('Hey!')
-        }else{
-            reject('Ups!!');
-        }
-    });
 }
 
-promesa()
-    .then(response => console.log(response))
-    .then(() => console.log('Hola'))
-    .catch(error => console.log(error))
+const calc = new calculator()
+console.log(calc.sum(2,2));
+
+//Modulos
+
+import {hello} from './module';
+
+hello();
+
+//Generadores
+
+function* helloWorld(){
+    if(true){
+        yield 'Hello';
+    }
+    if(true){
+        yield 'World!';
+    }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
