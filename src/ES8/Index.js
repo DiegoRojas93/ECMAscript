@@ -1,53 +1,27 @@
-// Object.entries
-const data = {
-    frontend: 'Oscar',
-    age: 26,
-    backend: 'Isabel',
-    design: 'Ana',
-}
+// Ansycn Await
+const helloWorld = () =>{
+    return new Promise ((resolve,reject) =>{
+        (false)
+          ? setTimeout(() => resolve('Hello World'),3000)
+          : reject(new Error('Text Error'))
+    })
+};
 
-const list =Object.entries(data);
-console.log(list);
+const helloAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);    
+};
 
-// Object.values
-const data = {
-    frontend: 'Oscar',
-    age: 26,
-    backend: 'Isabel',
-    design: 'Ana',
-}
-
-const valores =Object.values(data);
-console.log(valores);
-
-// Object.values
-const data = {
-    frontend: 'Oscar',
-    age: 26,
-    backend: 'Isabel',
-    design: 'Ana',
-}
-
-const llaves =Object.keys(data);
-console.log(llaves);
-
-//padStar
-
-const string = 'Hello'
-
-console.log(string.padStart(8,'Hi '));
+helloAsync();
 
 
-//PadEnd
+const anotherFunction = async () =>{
+    try{
+        const hello = await helloWorld();
+        console.log(hello);
+    } catch (error){
+        console.log(error);
+    }
+};
 
-const string = 'Hello';
-
-console.log(string.padEnd(11,' World'));
-
-//length
-
-const lista= [1, 'Diego', 3, 4, 5]
-
-console.log(lista.length);
-
-
+anotherFunction();
