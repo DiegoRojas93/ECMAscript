@@ -1,7 +1,7 @@
 // Ansycn Await
 const helloWorld = () =>{
     return new Promise ((resolve,reject) =>{
-        (false)
+        (true)
           ? setTimeout(() => resolve('Hello World'),3000)
           : reject(new Error('Text Error'))
     })
@@ -13,7 +13,6 @@ const helloAsync = async () => {
 };
 
 helloAsync();
-
 
 const anotherFunction = async () =>{
     try{
